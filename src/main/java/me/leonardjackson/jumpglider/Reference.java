@@ -11,7 +11,9 @@ public class Reference {
 	public static final String SERVER_PROXY_CLASS = "me.leonardjackson.jumpglider.proxy.ServerProxy";
 	
 	public static enum JumpGliderItems {
-		POLE("pole", "ItemPole");
+		POLE("pole", "ItemPole"),
+		CLOTH("cloth", "ItemCloth"),
+		GLUE("glue", "ItemGlue");
 		
 		private String unlocalizedName;
 		private String registryName;

@@ -8,6 +8,6 @@ public class ItemPole extends Item {
 
 	public ItemPole() {
 		setUnlocalizedName(Reference.JumpGliderItems.POLE.getUnlocalizedName());
-		setRegistryName(Reference.JumpGliderItems.POLE.getUnlocalizedName());
+		setRegistryName(Reference.JumpGliderItems.POLE.getRegistryName());
 	}
 }
