@@ -36,11 +36,6 @@ public class ItemGliderWings extends ItemArmor {
 	}
 	
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
-		return "jumpglider:items/glider.png";
-	}
-	
-	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		if (itemStack.getItem() == ModItems.gliderWings) {
 			boolean inAir = !player.onGround && player.motionY < 0 && !player.isInWater();
@@ -50,7 +45,6 @@ public class ItemGliderWings extends ItemArmor {
 			double verticalSpeed = 0.5;
 			
 			if (inAir && sneaking) {
-				System.out.println("should be gliding");
 				player.motionY *= verticalSpeed;
 				double x = Math.cos(Math.toRadians(player.rotationYawHead + 90)) * horizontalSpeed;
 				double z = Math.sin(Math.toRadians(player.rotationYawHead + 90)) * horizontalSpeed;
