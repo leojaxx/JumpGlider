@@ -1,7 +1,6 @@
 package me.leonardjackson.jumpglider.items;
 
 import me.leonardjackson.jumpglider.Reference;
-import me.leonardjackson.jumpglider.JumpGlider;
 import net.minecraft.item.Item;
 
 public class ItemPole extends Item {

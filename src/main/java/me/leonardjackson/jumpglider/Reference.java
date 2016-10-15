@@ -13,7 +13,12 @@ public class Reference {
 	public static enum JumpGliderItems {
 		POLE("pole", "ItemPole"),
 		CLOTH("cloth", "ItemCloth"),
-		GLUE("glue", "ItemGlue");
+		GLUE("glue", "ItemGlue"),
+		SPRING("spring", "ItemSpring"),
+		GLIDER_WING("glider_wing", "ItemGliderWing"),
+		GLIDER_WINGS("glider_wings", "ItemGliderWings"),
+		PROTECTED_GLIDER_WINGS("protected_glider_wings", "ItemProtectedGliderWings"),
+		JUMP_BOOTS("jump_boots", "ItemJumpBoots");
 		
 		private String unlocalizedName;
 		private String registryName;
