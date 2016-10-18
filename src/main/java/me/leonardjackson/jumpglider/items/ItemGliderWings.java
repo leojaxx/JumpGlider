@@ -1,9 +1,13 @@
 package me.leonardjackson.jumpglider.items;
 
 import me.leonardjackson.jumpglider.Reference;
+import me.leonardjackson.jumpglider.client.render.ModelCustomArmor;
+import me.leonardjackson.jumpglider.client.render.ModelCustomArmor.ArmorModel;
 import me.leonardjackson.jumpglider.init.ModItems;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -15,13 +19,15 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemGliderWings extends ItemArmor {
 	
 
 	public ItemGliderWings() {
 		
-		super(EnumHelper.addArmorMaterial("GLIDER_WINGS", "items/gliderWings", 5, new int[] {1, 2, 3, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F), 0, EntityEquipmentSlot.CHEST);
+		super(EnumHelper.addArmorMaterial("GLIDER_WINGS", "jumpglider:jumpglider", 5, new int[] {1, 2, 3, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F), 0, EntityEquipmentSlot.CHEST);
 		setUnlocalizedName(Reference.JumpGliderItems.GLIDER_WINGS.getUnlocalizedName());
 		setRegistryName(Reference.JumpGliderItems.GLIDER_WINGS.getRegistryName());
 	}
@@ -53,6 +59,18 @@ public class ItemGliderWings extends ItemArmor {
 				player.fallDistance = 0F;
 			}
 		}
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, ModelBiped _default) {
+		ModelCustomArmor model = ModelCustomArmor.INSTANCE;
+		
+		if (this == ModItems.gliderWings) {
+			model.modelType = ArmorModel.GLIDER_WINGS;
+		}
+		
+		return model;
 	}
 	
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World world, EntityPlayer player, EnumHand hand) {
