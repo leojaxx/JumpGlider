@@ -25,12 +25,12 @@ public class ItemJumpGliderArmor extends ItemArmor {
 
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("item.%s%s", Reference.MOD_ID, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("item.%s", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return String.format("item.%s%s", Reference.MOD_ID, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+		return String.format("item.%s", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
 	}
 	
 	protected String getUnwrappedUnlocalizedName(String unlocalizedName) {

@@ -15,11 +15,9 @@ Dark Helm of Haste - Allows player to focus on block they're breaking so it brea
 
 * edit rendering of player to "lay down" and quit swinging arms when gliding
 
-* remodel wings
+* remodel wings ( don't feel the white wings fit with the look of the rest of the armor anymore )
 
-* fix/update current textures
-
-* add item texures and .json files
+* update current textures ( fixed but still need work )
 
 * add crafting recipes and crafing items
 
