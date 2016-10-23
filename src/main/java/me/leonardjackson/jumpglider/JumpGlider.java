@@ -1,7 +1,9 @@
 package me.leonardjackson.jumpglider;
 
+import me.leonardjackson.jumpglider.event.EventHandlerCommon;
 import me.leonardjackson.jumpglider.init.ModItems;
 import me.leonardjackson.jumpglider.proxy.CommonProxy;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -30,6 +32,8 @@ public class JumpGlider {
 	public void init(FMLInitializationEvent event) {
 		System.out.println("Init");
 		proxy.init();
+		
+		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
 	}
 
 	@EventHandler

@@ -77,6 +77,7 @@ public class ItemJumpGliderArmor extends ItemArmor {
 		}
 	}
 	public boolean isGliding;
+	public static double letGo;
 		
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
@@ -121,6 +122,7 @@ public class ItemJumpGliderArmor extends ItemArmor {
 				double addY = 0.05D;
 				if (singlePlayer.movementInput.jump) {
 					singlePlayer.motionY += (addY * 3.0F);
+					letGo = player.posY;
 				}
 			}
 		}

@@ -16,6 +16,8 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
+
+
 	public static Item jumpGliderHelm;
 	public static Item jumpGliderWings;
 	public static Item jumpGliderLeggings;
