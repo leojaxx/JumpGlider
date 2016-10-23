@@ -3,8 +3,11 @@
 A simple little Minecraft mod that adds some early game armor
 
 Glider Wings - Allow player to glide
+
 Jump Boots - Shoots player into the air when holding jump button( needs balancing, see below )
+
 Jump Glider Leggings - Gives speed 1 ( needs cool name )
+
 Dark Helm of Haste - Allows player to focus on block they're breaking so it breaks a little faster ( haste 1 )( maybe new name? )
 
 ###TODO
