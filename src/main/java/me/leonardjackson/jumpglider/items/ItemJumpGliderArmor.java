@@ -1,5 +1,6 @@
 package me.leonardjackson.jumpglider.items;
 
+import me.leonardjackson.jumpglider.JumpGlider;
 import me.leonardjackson.jumpglider.Reference;
 import me.leonardjackson.jumpglider.init.ModItems;
 import net.minecraft.client.Minecraft;
@@ -21,6 +22,7 @@ public class ItemJumpGliderArmor extends ItemArmor {
 		super(material, index, armorSlot);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(unlocalizedName);
+		setCreativeTab(JumpGlider.CREATIVE_TAB);
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package me.leonardjackson.jumpglider;
 import me.leonardjackson.jumpglider.event.EventHandlerCommon;
 import me.leonardjackson.jumpglider.init.ModItems;
 import me.leonardjackson.jumpglider.proxy.CommonProxy;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -20,6 +21,8 @@ public class JumpGlider {
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
+	
+	public static final CreativeTabs CREATIVE_TAB = new JumpGliderCreativeTab();
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
