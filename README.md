@@ -14,15 +14,13 @@ Dark Helm of Haste - Allows player to focus on block they're breaking so it brea
 
 * balance Jump Boots ( need to add some sort of "fuel" and/or limit height and add cooldown? )
 
-* maybe add feather falling 1 if player is wearing both Glider Wings and Jump Boots?
-
 * edit rendering of player to "lay down" and quit swinging arms when gliding
 
 * remodel wings ( don't feel the white wings fit with the look of the rest of the armor anymore )
 
 * update current textures ( fixed but still need work )
 
-* add crafting recipes and crafing items
+* add crafting recipes
 
 * add sounds ( wind for gliding, something magical? dark? when getting boosted in the air )
 	
