@@ -20,8 +20,6 @@ Dark Helm of Haste - Allows player to focus on block they're breaking so it brea
 
 * update current textures ( fixed but still need work )
 
-* add crafting recipes
-
 * add sounds ( wind for gliding, something magical? dark? when getting boosted in the air )
 	
 Still need to test on Server ....
