@@ -78,9 +78,10 @@ public class ItemJumpGliderArmor extends ItemArmor {
 			player.addPotionEffect(new PotionEffect(potion, 2, 1, false, false));
 		}
 	}
+
 	public boolean isGliding;
 	public static double letGo;
-		
+
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		

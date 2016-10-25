@@ -1,0 +1,33 @@
+package me.leonardjackson.jumpglider.init;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class ModCrafting {
+	
+	public static void register() {
+		ItemStack coal = new ItemStack(Items.COAL, 1);
+		ItemStack iron = new ItemStack(Items.IRON_INGOT, 1);
+		ItemStack redstone = new ItemStack(Items.REDSTONE, 1);
+		ItemStack leatherChestplate = new ItemStack(Items.LEATHER_CHESTPLATE, 1);
+		ItemStack feather = new ItemStack(Items.FEATHER, 1);
+		ItemStack piston = new ItemStack(Blocks.PISTON, 1);
+		
+		Item darkIron = ModItems.darknessInfusedIron;
+		Item darkCross = ModItems.crossOfDarkness;
+		Item wing = ModItems.jumpGliderWing;
+		
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.darknessInfusedIron), "C", "I", "R", 'C', coal, 'I', iron, 'R', redstone);
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.crossOfDarkness), " D ", "DRD", " D ", 'D', darkIron, 'R', redstone);
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.jumpGliderWing), "FFF", "DFF", "DDF", 'F', feather, 'D', darkIron);
+
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.jumpGliderHelm), "DDD", "I I", 'D', darkIron, 'I', iron);
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.jumpGliderWings), "W W", " L ", " C ", 'W', wing, 'L', leatherChestplate, 'C', darkCross);
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.jumpGliderLeggings), "DDD", "I I", "I I", 'D', darkIron, 'I', iron);
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.jumpGliderBoots), "D D", "P P", 'D', darkIron, 'P', piston);
+
+	}
+}

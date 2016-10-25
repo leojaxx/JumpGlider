@@ -21,7 +21,7 @@ public class EventHandlerCommon {
 					BlockPos block = player.getPosition();
 					double blockHeight = block.getY();
 					double distance = (playerHeight - blockHeight);
-					distance = distance - 3;
+					distance = distance - 4;
 					
 					if (player.posY - blockHeight >= distance)
 						event.setDistance((float)distance);

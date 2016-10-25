@@ -1,6 +1,7 @@
 package me.leonardjackson.jumpglider;
 
 import me.leonardjackson.jumpglider.event.EventHandlerCommon;
+import me.leonardjackson.jumpglider.init.ModCrafting;
 import me.leonardjackson.jumpglider.init.ModItems;
 import me.leonardjackson.jumpglider.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
@@ -36,6 +37,7 @@ public class JumpGlider {
 		System.out.println("Init");
 		proxy.init();
 		
+		ModCrafting.register();
 		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
 	}
 
