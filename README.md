@@ -24,4 +24,12 @@ Dark Helm of Haste - Allows player to focus on block they're breaking so it brea
 	
 Still need to test on Server ....
 	
-####Profit?
+###License?
+
+As for licensing, you can do as you wish as long as you don't distribute as your own, sell, or upload the Jump Glider Armor mod anywhere ( only use links that I have created ). Especially don't use adfly links or anything like that which you can make money off of. So basically just use download links that I've created and don't profit from it.
+
+For modpacks if you wanna let me know that's fine but I imagine contacting every mod owner for a pack can get extreme so I'd understand if you didn't.
+
+Pull requests welcome, encouraged really. If you contribute you will get recognition here and you're welcome to comment any code that you've changed/written.
+
+
