@@ -130,15 +130,15 @@ public class ItemJumpGliderArmor extends ItemArmor {
 			}
 		}
 		
-		// if player is wearing both leggings and boots they will get step assist
-		ItemStack jumpBoots = player.getItemStackFromSlot(EntityEquipmentSlot.FEET);
-		ItemStack leggings = player.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
-		if (jumpBoots != null && jumpBoots.getItem() == ModItems.jumpGliderBoots &&
-				leggings != null && leggings.getItem() == ModItems.jumpGliderLeggings) {
-			player.stepHeight = 1.0023F;
-		} else {
-			player.stepHeight = 0.6F;
-		}
+//		// if player is wearing both leggings and boots they will get step assist
+//		ItemStack jumpBoots = player.getItemStackFromSlot(EntityEquipmentSlot.FEET);
+//		ItemStack leggings = player.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+//		if (jumpBoots != null && jumpBoots.getItem() == ModItems.jumpGliderBoots &&
+//				leggings != null && leggings.getItem() == ModItems.jumpGliderLeggings) {
+//			player.stepHeight = 1.0023F;
+//		} else {
+//			player.stepHeight = 0.6F;
+//		}
 
 		super.onArmorTick(world, player, itemStack);
 	}
