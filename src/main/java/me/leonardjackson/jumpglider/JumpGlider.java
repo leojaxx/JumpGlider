@@ -1,6 +1,7 @@
 package me.leonardjackson.jumpglider;
 
 import me.leonardjackson.jumpglider.event.EventHandlerCommon;
+import me.leonardjackson.jumpglider.init.ModBlocks;
 import me.leonardjackson.jumpglider.init.ModCrafting;
 import me.leonardjackson.jumpglider.init.ModItems;
 import me.leonardjackson.jumpglider.proxy.CommonProxy;
@@ -28,8 +29,12 @@ public class JumpGlider {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		System.out.println("Pre Init");
+
 		ModItems.init();
 		ModItems.register();
+		
+		ModBlocks.init();
+		ModBlocks.register();
 	}
 	
 	@EventHandler

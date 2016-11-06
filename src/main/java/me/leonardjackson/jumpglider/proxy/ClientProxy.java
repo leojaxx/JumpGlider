@@ -1,5 +1,6 @@
 package me.leonardjackson.jumpglider.proxy;
 
+import me.leonardjackson.jumpglider.init.ModBlocks;
 import me.leonardjackson.jumpglider.init.ModItems;
 
 public class ClientProxy implements CommonProxy {
@@ -8,6 +9,7 @@ public class ClientProxy implements CommonProxy {
 	public void init() {
 		ModItems.registerRenders();
 		ModItems.registerJumpGliderArmor();
+		ModBlocks.registerRenders();
 	}
 	
 }

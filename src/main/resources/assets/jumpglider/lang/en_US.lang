@@ -4,7 +4,9 @@ item.jumpglider_leggings.name=Jump Glider Leggings
 item.jumpglider_boots.name=Jump Boots
 
 item.jumpGliderWing.name=Jump Glider Wing
-item.darknessInfusedIron.name=Darkness Infused Iron
+item.darknessInfusedIronIngot.name=Darkness Infused Iron
 item.crossOfDarkness.name=Cross of Darkness
+
+tile.darknessInfusedIronBlock.name=Darkness Infused Iron Block
 
 itemGroup.tabJumpGlider=Jump Glider Armor

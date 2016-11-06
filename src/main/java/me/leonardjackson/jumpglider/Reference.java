@@ -3,7 +3,7 @@ package me.leonardjackson.jumpglider;
 public class Reference {
 	public static final String MOD_ID = "jumpglider";
 	public static final String NAME = "Jump Glider";
-	public static final String VERSION = "A1.1";
+	public static final String VERSION = "A1.3";
 	public static final String ACCEPTED_VERSIONS = "1.10.2";
 
 	public static final String CLIENT_PROXY_CLASS = "me.leonardjackson.jumpglider.proxy.ClientProxy";
@@ -29,6 +29,27 @@ public class Reference {
 		
 		public String getRegistryName() {
 			return registryName;
+		}
+	}
+	
+	public static enum JumpGliderBlocks {
+
+		DARKNESS_INFUSED_IRON_BLOCK("darknessInfusedIronBlock", "BlockDarknessInfusedIron");
+		
+		private String unlocalizedName;
+		private String registryName;
+		
+		JumpGliderBlocks(String unlocalizedName, String registryName) {
+			this.unlocalizedName = unlocalizedName;
+			this.registryName = registryName;
+		}
+		
+		public String getRegistryName() {
+			return registryName;
+		}
+		
+		public String getUnlocalizedName() {
+			return unlocalizedName;
 		}
 	}
 }

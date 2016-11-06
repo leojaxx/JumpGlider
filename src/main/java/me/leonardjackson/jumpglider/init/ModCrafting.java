@@ -28,6 +28,8 @@ public class ModCrafting {
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.jumpGliderWings), "W W", " L ", " C ", 'W', wing, 'L', leatherChestplate, 'C', darkCross);
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.jumpGliderLeggings), "DDD", "I I", "I I", 'D', darkIron, 'I', iron);
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.jumpGliderBoots), "D D", "P P", 'D', darkIron, 'P', piston);
+		
+		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.darknessInfusedIronBlock), "DDD", "DDD", "DDD", 'D', darkIron);
 
 	}
 }
