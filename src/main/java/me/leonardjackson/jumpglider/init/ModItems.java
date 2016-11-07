@@ -3,19 +3,27 @@ package me.leonardjackson.jumpglider.init;
 import java.util.HashMap;
 import java.util.Map;
 
+import me.leonardjackson.jumpglider.JumpGlider;
 import me.leonardjackson.jumpglider.items.ItemCrossOfDarkness;
 import me.leonardjackson.jumpglider.items.ItemDarknessInfusedIron;
 import me.leonardjackson.jumpglider.items.ItemJumpGliderArmor;
 import me.leonardjackson.jumpglider.items.ItemJumpGliderWing;
 import me.leonardjackson.jumpglider.items.models.ModelJumpGliderArmor;
+import me.leonardjackson.jumpglider.items.tools.ItemDarkIronAxe;
+import me.leonardjackson.jumpglider.items.tools.ItemDarkIronHoe;
+import me.leonardjackson.jumpglider.items.tools.ItemDarkIronPickaxe;
+import me.leonardjackson.jumpglider.items.tools.ItemDarkIronShovel;
+import me.leonardjackson.jumpglider.items.tools.ItemDarkIronSword;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
+import net.minecraft.item.ItemSword;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
@@ -25,17 +33,29 @@ public class ModItems {
 	public static Item jumpGliderWings;
 	public static Item jumpGliderLeggings;
 	public static Item jumpGliderBoots;
+	
+	public static ItemAxe darkIronAxe;
+	public static ItemHoe darkIronHoe;
+	public static ItemPickaxe darkIronPickaxe;
+	public static ItemSpade darkIronShovel;
+	public static ItemSword darkIronSword;
+	
 	public static Item jumpGliderWing;
 	public static Item darknessInfusedIron;
 	public static Item crossOfDarkness;
 
 	public static void init() {
-		ArmorMaterial MATERIAL = EnumHelper.addArmorMaterial("MATERIAL", "jumpglider:jumpglider", 20, new int[] {2, 5, 4, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F);
 		
-		jumpGliderHelm = new ItemJumpGliderArmor("jumpglider_helm", MATERIAL, 1, EntityEquipmentSlot.HEAD);
-		jumpGliderWings = new ItemJumpGliderArmor("jumpglider_wings", MATERIAL, 1, EntityEquipmentSlot.CHEST);
-		jumpGliderLeggings = new ItemJumpGliderArmor("jumpglider_leggings", MATERIAL, 1, EntityEquipmentSlot.LEGS);
-		jumpGliderBoots = new ItemJumpGliderArmor("jumpglider_boots", MATERIAL, 1, EntityEquipmentSlot.FEET);
+		jumpGliderHelm = new ItemJumpGliderArmor("jumpglider_helm", JumpGlider.darkIronArmorMaterial, 1, EntityEquipmentSlot.HEAD);
+		jumpGliderWings = new ItemJumpGliderArmor("jumpglider_wings", JumpGlider.darkIronArmorMaterial, 1, EntityEquipmentSlot.CHEST);
+		jumpGliderLeggings = new ItemJumpGliderArmor("jumpglider_leggings", JumpGlider.darkIronArmorMaterial, 1, EntityEquipmentSlot.LEGS);
+		jumpGliderBoots = new ItemJumpGliderArmor("jumpglider_boots", JumpGlider.darkIronArmorMaterial, 1, EntityEquipmentSlot.FEET);
+		
+		darkIronAxe = new ItemDarkIronAxe(JumpGlider.darkIronToolMaterial);
+		darkIronHoe = new ItemDarkIronHoe(JumpGlider.darkIronToolMaterial);
+		darkIronPickaxe = new ItemDarkIronPickaxe(JumpGlider.darkIronToolMaterial);
+		darkIronShovel = new ItemDarkIronShovel(JumpGlider.darkIronToolMaterial);
+		darkIronSword = new ItemDarkIronSword(JumpGlider.darkIronToolMaterial);
 		
 		jumpGliderWing = new ItemJumpGliderWing();
 		darknessInfusedIron = new ItemDarknessInfusedIron();
@@ -47,6 +67,13 @@ public class ModItems {
 		GameRegistry.register(jumpGliderWings);
 		GameRegistry.register(jumpGliderLeggings);
 		GameRegistry.register(jumpGliderBoots);
+		
+		GameRegistry.register(darkIronAxe);
+		GameRegistry.register(darkIronHoe);
+		GameRegistry.register(darkIronPickaxe);
+		GameRegistry.register(darkIronShovel);
+		GameRegistry.register(darkIronSword);
+		
 		GameRegistry.register(jumpGliderWing);
 		GameRegistry.register(darknessInfusedIron);
 		GameRegistry.register(crossOfDarkness);
@@ -57,6 +84,13 @@ public class ModItems {
 		registerRender(jumpGliderWings);
 		registerRender(jumpGliderLeggings);
 		registerRender(jumpGliderBoots);
+		
+		registerRender(darkIronAxe);
+		registerRender(darkIronHoe);
+		registerRender(darkIronPickaxe);
+		registerRender(darkIronShovel);
+		registerRender(darkIronSword);
+		
 		registerRender(jumpGliderWing);
 		registerRender(darknessInfusedIron);
 		registerRender(crossOfDarkness);

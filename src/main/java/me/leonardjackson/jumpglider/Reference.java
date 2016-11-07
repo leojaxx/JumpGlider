@@ -13,7 +13,12 @@ public class Reference {
 		
 		JUMPGLIDERWING("jumpGliderWing", "ItemJumpGliderWing"),
 		DARKNESS_INFUSED_IRON("darknessInfusedIron", "ItemDarknessInfusedIron"),
-		CROSS_OF_DARKNESS("crossOfDarkness", "ItemCrossOfDarkness");
+		CROSS_OF_DARKNESS("crossOfDarkness", "ItemCrossOfDarkness"),
+		DARK_IRON_SWORD("darkIronSword", "ItemDarkIronSword"),
+		DARK_IRON_PICKAXE("darkIronPickaxe", "ItemDarkIronPickaxe"),
+		DARK_IRON_AXE("darkIronAxe", "ItemDarkIronAxe"),
+		DARK_IRON_SHOVEL("darkIronShovel", "ItemDarkIronShovel"),
+		DARK_IRON_HOE("darkIronHoe", "ItemDarkIronHoe");
 
 		private String unlocalizedName;
 		private String registryName;

@@ -6,7 +6,11 @@ import me.leonardjackson.jumpglider.init.ModCrafting;
 import me.leonardjackson.jumpglider.init.ModItems;
 import me.leonardjackson.jumpglider.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -25,6 +29,8 @@ public class JumpGlider {
 	public static CommonProxy proxy;
 	
 	public static final CreativeTabs CREATIVE_TAB = new JumpGliderCreativeTab();
+	public static final Item.ToolMaterial darkIronToolMaterial = EnumHelper.addToolMaterial("DARKIRON", 3, 750, 7, 2.5F, 22);
+	public static final ArmorMaterial darkIronArmorMaterial = EnumHelper.addArmorMaterial("DARKIRON", "jumpglider:jumpglider", 20, new int[] {2, 5, 4, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F);
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
