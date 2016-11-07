@@ -3,6 +3,12 @@ item.jumpglider_wings.name=Glider Wings
 item.jumpglider_leggings.name=Jump Glider Leggings
 item.jumpglider_boots.name=Jump Boots
 
+item.darkIronAxe.name=Darkness Infused Axe
+item.darkIronHoe.name=Darkness Infused Hoe
+item.darkIronPickaxe.name=Darkness Infused Pickaxe
+item.darkIronShovel.name=Darkness Infused Shovel
+item.darkIronSword.name=Darkness Infused Sword
+
 item.jumpGliderWing.name=Jump Glider Wing
 item.darknessInfusedIronIngot.name=Darkness Infused Iron
 item.crossOfDarkness.name=Cross of Darkness
