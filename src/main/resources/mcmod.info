@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "jumpglider",
+  "name": "Jump Glider",
+  "description": "Early game armor and tools that add some special abilities",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://minecraft.curseforge.com/projects/jump-glider-armor",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["DrAkademik"],
+  "credits": "The Forge and FML guys, for making this example, and the authors of Openblocks and Enderio for the inspiration",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
