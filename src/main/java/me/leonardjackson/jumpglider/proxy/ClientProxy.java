@@ -1,7 +1,9 @@
 package me.leonardjackson.jumpglider.proxy;
 
+import me.leonardjackson.jumpglider.event.EventHandlerClient;
 import me.leonardjackson.jumpglider.init.ModBlocks;
 import me.leonardjackson.jumpglider.init.ModItems;
+import net.minecraftforge.common.MinecraftForge;
 
 public class ClientProxy implements CommonProxy {
 	
@@ -10,6 +12,8 @@ public class ClientProxy implements CommonProxy {
 		ModItems.registerRenders();
 		ModItems.registerJumpGliderArmor();
 		ModBlocks.registerRenders();
+		MinecraftForge.EVENT_BUS.register(new EventHandlerClient());
+
 	}
 	
 }
