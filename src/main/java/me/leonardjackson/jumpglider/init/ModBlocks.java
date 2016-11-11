@@ -1,5 +1,6 @@
 package me.leonardjackson.jumpglider.init;
 
+import me.leonardjackson.jumpglider.blocks.BlockDarknessInfusedGlass;
 import me.leonardjackson.jumpglider.blocks.BlockDarknessInfusedIron;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -11,13 +12,16 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ModBlocks {
 	
 	public static Block darknessInfusedIronBlock;
+	public static Block darknessInfusedGlass;
 	
 	public static void init() {
 		darknessInfusedIronBlock = new BlockDarknessInfusedIron();
+		darknessInfusedGlass = new BlockDarknessInfusedGlass(null, false);
 	}
 	
 	public static void register() {
 		registerBlock(darknessInfusedIronBlock);
+		registerBlock(darknessInfusedGlass);
 	}
 	
 	public static void registerBlock(Block block) {
@@ -29,6 +33,7 @@ public class ModBlocks {
 	
 	public static void registerRenders() {
 		registerRender(darknessInfusedIronBlock);
+		registerRender(darknessInfusedGlass);
 	}
 	
 	private static void registerRender(Block block) {

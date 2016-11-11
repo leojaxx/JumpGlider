@@ -14,5 +14,6 @@ item.darknessInfusedIronIngot.name=Darkness Infused Iron
 item.crossOfDarkness.name=Cross of Darkness
 
 tile.darknessInfusedIronBlock.name=Darkness Infused Iron Block
+tile.darknessInfusedIronGlass.name=Darkness Infused Glass
 
 itemGroup.tabJumpGlider=Jump Glider Armor

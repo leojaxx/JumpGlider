@@ -39,7 +39,8 @@ public class Reference {
 	
 	public static enum JumpGliderBlocks {
 
-		DARKNESS_INFUSED_IRON_BLOCK("darknessInfusedIronBlock", "BlockDarknessInfusedIron");
+		DARKNESS_INFUSED_IRON_BLOCK("darknessInfusedIronBlock", "BlockDarknessInfusedIron"),
+		DARKNESS_INFUSED_GLASS("darknessInfusedGlass", "BlockDarknessInfusedGlass");
 		
 		private String unlocalizedName;
 		private String registryName;

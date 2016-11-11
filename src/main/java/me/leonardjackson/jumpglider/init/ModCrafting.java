@@ -17,6 +17,7 @@ public class ModCrafting {
 		ItemStack feather = new ItemStack(Items.FEATHER, 1);
 		ItemStack piston = new ItemStack(Blocks.PISTON, 1);
 		ItemStack stick = new ItemStack(Items.STICK);
+		ItemStack glass = new ItemStack(Blocks.GLASS);
 		
 		Item darkIron = ModItems.darknessInfusedIron;
 		Block darkIronBlock = ModBlocks.darknessInfusedIronBlock;
@@ -42,6 +43,7 @@ public class ModCrafting {
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.darkIronSword), " D ", " D ", " S ", 'D', darkIron, 'S', stick);
 		
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.darknessInfusedIronBlock), "DDD", "DDD", "DDD", 'D', darkIron);
+		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.darknessInfusedGlass), "DGD", "G G", "DGD", 'D', darkIron, 'G', glass);
 
 	}
 }
