@@ -34,6 +34,7 @@ minecraft {
 }
 
 dependencies {
+	compile "net.darkhax.tesla:Tesla:1.10.2-1.2.1.49"
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"

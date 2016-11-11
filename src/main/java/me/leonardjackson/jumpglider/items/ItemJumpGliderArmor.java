@@ -146,23 +146,6 @@ public class ItemJumpGliderArmor extends ItemArmor {
 		super.onArmorTick(world, player, itemStack);
 	}
 	
-	@SubscribeEvent
-	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		EntityPlayer player = event.player;
-		// if player is wearing both leggings and boots they will get step assist
-		if (event.phase == Phase.START) {
-			
-			ItemStack jumpBoots = player.getItemStackFromSlot(EntityEquipmentSlot.FEET);
-			ItemStack leggings = player.getItemStackFromSlot(EntityEquipmentSlot.LEGS);
-			if (jumpBoots != null && jumpBoots.getItem() == ModItems.jumpGliderBoots &&
-					leggings != null && leggings.getItem() == ModItems.jumpGliderLeggings) {
-				player.stepHeight = 1.0023F;
-			} else {
-				player.stepHeight = 0.6F;
-			}
-		}
-	}
-
 }
 
 
