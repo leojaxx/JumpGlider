@@ -133,7 +133,7 @@ public class ItemJumpGliderArmor extends ItemArmor {
                 ItemStack redstone = this.findFuel(player);
 				if (singlePlayer.movementInput.jump) {
                     if (player.inventory.hasItemStack(new ItemStack(Items.REDSTONE))) {
-                        if (this.fuelCounter == 30) {
+                        if (this.fuelCounter == 25) {
                             redstone.stackSize--;
                             this.fuelCounter = 0;
                             if (redstone.stackSize == 0) {
