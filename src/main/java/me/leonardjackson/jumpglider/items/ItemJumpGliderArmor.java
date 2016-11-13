@@ -96,11 +96,12 @@ public class ItemJumpGliderArmor extends ItemArmor {
 		if (itemStack.getItem() == ModItems.jumpGliderWings) {
 			boolean inAir = !player.onGround && player.motionY < 0 && !player.isInWater();
 			boolean sneaking = player.isSneaking();
+            boolean flying = player.capabilities.isFlying;
 
 			double horizontalSpeed = 0.08;
 			double verticalSpeed = 0.5;
 			
-			if (inAir && sneaking) {
+			if (inAir && sneaking && !flying) {
 
 				player.motionY *= verticalSpeed;
 				double x = Math.cos(Math.toRadians(player.rotationYawHead + 90)) * horizontalSpeed;
