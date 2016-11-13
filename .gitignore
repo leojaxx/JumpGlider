@@ -2,6 +2,7 @@
 
 # eclipse
 bin
+eclipse
 *.launch
 .settings
 .metadata
@@ -10,6 +11,7 @@ bin
 
 # idea
 out
+classes
 *.class
 *.ipr
 *.iws
@@ -20,7 +22,9 @@ out
 build
 .gradle
 
-# other
-eclipse
+#forgegradle
 run
+
+# other
 .DS_Store
+*.jar
