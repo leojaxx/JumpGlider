@@ -80,19 +80,19 @@ public class ItemJumpGliderArmor extends ItemArmor {
 
 	private void getPotionEffect(EntityPlayer player, Potion potion, int amplifier) {
 		if (player.getActivePotionEffect(potion) == null || player.getActivePotionEffect(potion).getDuration() <= 1) {
-			player.addPotionEffect(new PotionEffect(potion, 2, 1, false, false));
+			player.addPotionEffect(new PotionEffect(potion, 2, amplifier, false, false));
 		}
 	}
 
 	public boolean isGliding;
 	public double letGo;
+    private int fuelCounter;
 
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		
 		Potion haste = Potion.getPotionById(3);
 		Potion speed = Potion.getPotionById(1);
-        int fuelCounter;
 
 		if (itemStack.getItem() == ModItems.jumpGliderHelm) {
 			getPotionEffect(player, haste, 1);
@@ -122,7 +122,7 @@ public class ItemJumpGliderArmor extends ItemArmor {
 		
 		// if player is wearing the leggings they will get a speed potion
 		if (itemStack.getItem() == ModItems.jumpGliderLeggings) {
-			getPotionEffect(player, speed, 1);
+			getPotionEffect(player, speed, 0);
 		}
 		
 		// if player wearing boots they will get a jet pack type effect shooting them in the air to use their glider wings
@@ -133,15 +133,20 @@ public class ItemJumpGliderArmor extends ItemArmor {
                 ItemStack redstone = this.findFuel(player);
 				if (singlePlayer.movementInput.jump) {
                     if (player.inventory.hasItemStack(new ItemStack(Items.REDSTONE))) {
-                        System.out.println("Should be using " + redstone);
-                        redstone.stackSize--;
+                        if (this.fuelCounter == 30) {
+                            redstone.stackSize--;
+                            this.fuelCounter = 0;
+                            if (redstone.stackSize == 0) {
+                                player.inventory.deleteStack(redstone);
+                            }
+                        }
                         singlePlayer.motionY += (addY * 3.0F);
                         letGo = player.posY;
                     } else {
-                        System.out.println("damaging boots now");
                         itemStack.damageItem(1, player);
 					}
 
+                    this.fuelCounter++;
 				}
 			}
 		}

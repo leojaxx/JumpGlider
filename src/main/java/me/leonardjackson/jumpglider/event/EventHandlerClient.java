@@ -34,13 +34,13 @@ public class EventHandlerClient {
 
 			if (itemStack != null && itemStack.getItem() instanceof ItemJumpGliderArmor) {
 
+                System.out.println("Event should be working");
 				ItemJumpGliderArmor armor = (ItemJumpGliderArmor)itemStack.getItem();
 
 				double playerHeight = armor.letGo;
 				BlockPos block = player.getPosition();
 				double blockHeight = block.getY();
-				double distance = (playerHeight - blockHeight);
-				distance = distance - 4;
+				double distance = (playerHeight - blockHeight) - 4;
 
 				if (player.posY - blockHeight >= distance)
 					event.setDistance((float)distance);

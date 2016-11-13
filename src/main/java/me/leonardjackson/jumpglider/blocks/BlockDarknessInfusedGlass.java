@@ -18,7 +18,7 @@ public class BlockDarknessInfusedGlass extends BlockGlass {
 		setRegistryName(Reference.JumpGliderBlocks.DARKNESS_INFUSED_GLASS.getRegistryName());
 		setCreativeTab(JumpGlider.CREATIVE_TAB);
 		setSoundType(SoundType.GLASS);
-		setHardness(0.5F);
+		setHardness(4F);
 	}
 	
 	@Override

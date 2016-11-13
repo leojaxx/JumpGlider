@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the nessasary things for Forge to be setup.
 
 
-version = "V1.4.2"
+version = "V1.5.0"
 group= "me.leonardjackson.jumpglider" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "jumpglider-1.10.2"
 
@@ -40,7 +40,6 @@ repositories {
 }
 
 dependencies {
-	compile "net.darkhax.tesla:Tesla:1.10.2-1.2.1.50"
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
