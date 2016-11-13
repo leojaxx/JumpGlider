@@ -9,12 +9,17 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemRedstone;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
+
+import javax.annotation.Nullable;
 
 public class ItemJumpGliderArmor extends ItemArmor {
 
@@ -87,6 +92,7 @@ public class ItemJumpGliderArmor extends ItemArmor {
 		
 		Potion haste = Potion.getPotionById(3);
 		Potion speed = Potion.getPotionById(1);
+        int fuelCounter;
 
 		if (itemStack.getItem() == ModItems.jumpGliderHelm) {
 			getPotionEffect(player, haste, 1);
@@ -124,14 +130,45 @@ public class ItemJumpGliderArmor extends ItemArmor {
 			if (player.isAirBorne) {
 				EntityPlayerSP singlePlayer = Minecraft.getMinecraft().thePlayer;
 				double addY = 0.05D;
+                ItemStack redstone = this.findFuel(player);
 				if (singlePlayer.movementInput.jump) {
-					singlePlayer.motionY += (addY * 3.0F);
-					letGo = player.posY;
+                    if (player.inventory.hasItemStack(new ItemStack(Items.REDSTONE))) {
+                        System.out.println("Should be using " + redstone);
+                        redstone.stackSize--;
+                        singlePlayer.motionY += (addY * 3.0F);
+                        letGo = player.posY;
+                    } else {
+                        System.out.println("damaging boots now");
+                        itemStack.damageItem(1, player);
+					}
+
 				}
 			}
 		}
+
 		super.onArmorTick(world, player, itemStack);
 	}
+
+	private ItemStack findFuel(EntityPlayer player) {
+        if (this.isRedstone(player.getHeldItem(EnumHand.OFF_HAND))) {
+            return player.getHeldItem(EnumHand.OFF_HAND);
+        } else if (this.isRedstone(player.getHeldItem(EnumHand.MAIN_HAND))) {
+            return player.getHeldItem(EnumHand.MAIN_HAND);
+        } else {
+            for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+                ItemStack itemStack = player.inventory.getStackInSlot(i);
+                if (this.isRedstone(itemStack)) {
+                    return itemStack;
+                }
+            }
+
+            return null;
+        }
+    }
+
+    protected boolean isRedstone(@Nullable ItemStack stack) {
+        return stack != null && stack.getItem() instanceof ItemRedstone;
+    }
 }
 
 
