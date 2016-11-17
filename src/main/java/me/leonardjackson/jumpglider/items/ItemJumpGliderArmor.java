@@ -141,9 +141,8 @@ public class ItemJumpGliderArmor extends ItemArmor {
                         }
                     }
                     letGo = player.posY;
-                    this.fuelCounter++;
                 }
-
+                this.fuelCounter++;
             }
 		}
 	}
