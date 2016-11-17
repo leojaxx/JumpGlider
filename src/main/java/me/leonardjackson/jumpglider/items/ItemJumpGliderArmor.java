@@ -4,24 +4,18 @@ import me.leonardjackson.jumpglider.JumpGlider;
 import me.leonardjackson.jumpglider.Reference;
 import me.leonardjackson.jumpglider.event.SyncHandler;
 import me.leonardjackson.jumpglider.init.ModItems;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemRedstone;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.stats.StatList;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
-import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nullable;
 

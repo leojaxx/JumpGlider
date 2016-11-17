@@ -16,7 +16,6 @@ public class KeyHandler {
 
         if (KeyBindings.launchKey.isKeyDown()) {
             launchedState = true;
-            System.out.println("Space bar pressed");
         } else {
             launchedState = false;
         }
