@@ -43,7 +43,7 @@ public class ModCrafting {
 		GameRegistry.addShapedRecipe(new ItemStack(ModItems.darkIronSword), " D ", " D ", " S ", 'D', darkIron, 'S', stick);
 		
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.darknessInfusedIronBlock), "DDD", "DDD", "DDD", 'D', darkIron);
-		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.darknessInfusedGlass), "DGD", "G G", "DGD", 'D', darkIron, 'G', glass);
+		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.darknessInfusedGlass, 4), "DGD", "G G", "DGD", 'D', darkIron, 'G', glass);
 
 	}
 }

@@ -2,6 +2,7 @@ package me.leonardjackson.jumpglider.items;
 
 import me.leonardjackson.jumpglider.JumpGlider;
 import me.leonardjackson.jumpglider.Reference;
+import me.leonardjackson.jumpglider.event.SyncHandler;
 import me.leonardjackson.jumpglider.init.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -9,6 +10,7 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
@@ -16,8 +18,10 @@ import net.minecraft.item.ItemRedstone;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.stats.StatList;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
+import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nullable;
 
@@ -124,46 +128,45 @@ public class ItemJumpGliderArmor extends ItemArmor {
 		if (itemStack.getItem() == ModItems.jumpGliderLeggings) {
 			getPotionEffect(player, speed, 0);
 		}
-		
+
+
 		// if player wearing boots they will get a jet pack type effect shooting them in the air to use their glider wings
 		if (itemStack.getItem() == ModItems.jumpGliderBoots) {
-			if (player.isAirBorne) {
-				EntityPlayerSP singlePlayer = Minecraft.getMinecraft().thePlayer;
-				double addY = 0.05D;
+            boolean launchKeyDown = SyncHandler.isLaunchKeyDown(player);
+            if (launchKeyDown && !player.onGround) {
                 ItemStack redstone = this.findFuel(player);
-				if (singlePlayer.movementInput.jump) {
-                    if (player.inventory.hasItemStack(new ItemStack(Items.REDSTONE))) {
-                        if (this.fuelCounter == 25) {
-                            redstone.stackSize--;
-                            this.fuelCounter = 0;
-                            if (redstone.stackSize == 0) {
-                                player.inventory.deleteStack(redstone);
-                            }
+                double addY = 0.05D;
+
+                if (redstone != null) {
+                    player.motionY += (addY * 3.0F);
+                    if (this.fuelCounter == 25) {
+                        --redstone.stackSize;
+                        this.fuelCounter = 0;
+                        if (redstone.stackSize == 0) {
+                            player.inventory.deleteStack(redstone);
                         }
-                        singlePlayer.motionY += (addY * 3.0F);
-                        letGo = player.posY;
-                    } else {
-                        itemStack.damageItem(1, player);
-					}
-
+                    }
+                    letGo = player.posY;
                     this.fuelCounter++;
-				}
-			}
-		}
+                }
 
-		super.onArmorTick(world, player, itemStack);
+            }
+		}
 	}
 
 	private ItemStack findFuel(EntityPlayer player) {
         if (this.isRedstone(player.getHeldItem(EnumHand.OFF_HAND))) {
             return player.getHeldItem(EnumHand.OFF_HAND);
-        } else if (this.isRedstone(player.getHeldItem(EnumHand.MAIN_HAND))) {
+        }
+        else if (this.isRedstone(player.getHeldItem(EnumHand.MAIN_HAND))) {
             return player.getHeldItem(EnumHand.MAIN_HAND);
-        } else {
-            for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
-                ItemStack itemStack = player.inventory.getStackInSlot(i);
-                if (this.isRedstone(itemStack)) {
-                    return itemStack;
+        }
+        else {
+            for (int i = 0; i < player.inventory.getSizeInventory(); ++i) {
+                ItemStack itemstack = player.inventory.getStackInSlot(i);
+
+                if (this.isRedstone(itemstack)) {
+                    return itemstack;
                 }
             }
 
@@ -172,8 +175,9 @@ public class ItemJumpGliderArmor extends ItemArmor {
     }
 
     protected boolean isRedstone(@Nullable ItemStack stack) {
-        return stack != null && stack.getItem() instanceof ItemRedstone;
+        return stack != null && stack.getItem() == Items.REDSTONE;
     }
+
 }
 
 

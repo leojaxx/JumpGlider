@@ -34,7 +34,6 @@ public class EventHandlerClient {
 
 			if (itemStack != null && itemStack.getItem() instanceof ItemJumpGliderArmor) {
 
-                System.out.println("Event should be working");
 				ItemJumpGliderArmor armor = (ItemJumpGliderArmor)itemStack.getItem();
 
 				double playerHeight = armor.letGo;

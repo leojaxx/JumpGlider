@@ -1,9 +1,11 @@
 package me.leonardjackson.jumpglider;
 
 import me.leonardjackson.jumpglider.event.EventHandlerCommon;
+import me.leonardjackson.jumpglider.event.SyncHandler;
 import me.leonardjackson.jumpglider.init.ModBlocks;
 import me.leonardjackson.jumpglider.init.ModCrafting;
 import me.leonardjackson.jumpglider.init.ModItems;
+import me.leonardjackson.jumpglider.network.PacketHandler;
 import me.leonardjackson.jumpglider.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.SoundEvents;
@@ -18,6 +20,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSIONS)
 public class JumpGlider {
@@ -31,10 +34,15 @@ public class JumpGlider {
 	public static final CreativeTabs CREATIVE_TAB = new JumpGliderCreativeTab();
 	public static final Item.ToolMaterial darkIronToolMaterial = EnumHelper.addToolMaterial("DARKIRON", 3, 750, 7, 2.5F, 22);
 	public static final ArmorMaterial darkIronArmorMaterial = EnumHelper.addArmorMaterial("DARKIRON", "jumpglider:jumpglider", 20, new int[] {2, 5, 4, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F);
+
+	public static Logger logger;
+	public static SyncHandler keyboard;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		System.out.println("Pre Init");
+
+		logger = event.getModLog();
+        logger.info("Jump Glider Go!!");
 
 		ModItems.init();
 		ModItems.register();
@@ -45,11 +53,12 @@ public class JumpGlider {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		System.out.println("Init");
+
 		proxy.init();
-		
+		PacketHandler.registerMessages("jumpglider");
 		ModCrafting.register();
 		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
+
 	}
 
 	@EventHandler
